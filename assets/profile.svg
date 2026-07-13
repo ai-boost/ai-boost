@@ -1,400 +1,315 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="1200"
-  height="520"
-  viewBox="0 0 1200 520"
-  role="img"
-  aria-labelledby="title description"
->
-  <title id="title">Adrian Vale</title>
-  <desc id="description">
-    Building open systems for scientific discovery.
-  </desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="av-title av-desc">
+  <title id="av-title">Adrian Vale — @ai-boost</title>
+  <desc id="av-desc">An editorial profile banner. A single thread begins as a loose prompt signal, steadies as it passes through agents and systems, then divides into four fine strands that become scientific artifacts: lines of code, a scatter of data, a measured curve, and the ruled lines of a paper. Headline: I kept pulling on the thread.</desc>
 
   <defs>
-    <pattern
-      id="grid"
-      width="32"
-      height="32"
-      patternUnits="userSpaceOnUse"
-    >
-      <path
-        d="M 32 0 L 0 0 0 32"
-        fill="none"
-        stroke="#252a31"
-        stroke-width="1"
-      />
+    <pattern id="av-paper" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.65" fill="#E3DED2"/>
     </pattern>
-
-    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7dd3fc" />
-      <stop offset="100%" stop-color="#a5b4fc" />
-    </linearGradient>
-
-    <style>
-      .sans {
-        font-family:
-          Inter,
-          ui-sans-serif,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-      }
-
-      .mono {
-        font-family:
-          "SFMono-Regular",
-          Consolas,
-          "Liberation Mono",
-          monospace;
-      }
-
-      .muted {
-        fill: #8b949e;
-      }
-
-      .soft {
-        fill: #c9d1d9;
-      }
-
-      .bright {
-        fill: #f0f6fc;
-      }
-
-      .accent {
-        fill: #7dd3fc;
-      }
-    </style>
   </defs>
 
-  <!-- Canvas -->
-  <rect
-    width="1200"
-    height="520"
-    rx="26"
-    fill="#0d1117"
-  />
+  <style>
+    .av-serif { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; }
+    .av-sans  { font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .av-mono  { font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
 
-  <rect
-    x="1"
-    y="1"
-    width="1198"
-    height="518"
-    rx="25"
-    fill="none"
-    stroke="#30363d"
-    stroke-width="2"
-  />
+    .av-thread {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: av-draw 12s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+    }
+    @keyframes av-draw {
+      0%        { stroke-dashoffset: 1; opacity: 1; }
+      4%        { stroke-dashoffset: 1; }
+      26%       { stroke-dashoffset: 0; }
+      93%       { stroke-dashoffset: 0; opacity: 1; }
+      97%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
 
-  <rect
-    x="1"
-    y="1"
-    width="1198"
-    height="518"
-    rx="25"
-    fill="url(#grid)"
-    opacity="0.34"
-  />
+    .av-n { transform-box: fill-box; transform-origin: center; }
+    .av-n1 { animation: av-node1 12s ease-in-out infinite; }
+    .av-n2 { animation: av-node2 12s ease-in-out infinite; }
+    .av-n3 { animation: av-node3 12s ease-in-out infinite; }
+    @keyframes av-node1 {
+      0%, 22%   { opacity: 0;   transform: scale(1); }
+      27%, 31%  { opacity: .35; transform: scale(1); }
+      34%       { opacity: 1;   transform: scale(1.4); }
+      38%       { opacity: 1;   transform: scale(1); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+    @keyframes av-node2 {
+      0%, 22%   { opacity: 0;   transform: scale(1); }
+      27%, 38%  { opacity: .35; transform: scale(1); }
+      41%       { opacity: 1;   transform: scale(1.4); }
+      45%       { opacity: 1;   transform: scale(1); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+    @keyframes av-node3 {
+      0%, 22%   { opacity: 0;   transform: scale(1); }
+      27%, 44%  { opacity: .35; transform: scale(1); }
+      47%       { opacity: 1;   transform: scale(1.4); }
+      51%       { opacity: 1;   transform: scale(1); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
 
-  <!-- Header -->
-  <circle cx="64" cy="58" r="5" fill="#7dd3fc">
-    <animate
-      attributeName="opacity"
-      values="0.35;1;0.35"
-      dur="2.4s"
-      repeatCount="indefinite"
-    />
+    .av-bp { animation: av-bpoint 12s ease-in-out infinite; }
+    @keyframes av-bpoint {
+      0%, 51%   { opacity: 0; }
+      54%       { opacity: 1; }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+
+    .av-b { stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .av-b1 { animation: av-br1 12s cubic-bezier(0.4, 0, 0.3, 1) infinite; }
+    .av-b2 { animation: av-br2 12s cubic-bezier(0.4, 0, 0.3, 1) infinite; }
+    .av-b3 { animation: av-br3 12s cubic-bezier(0.4, 0, 0.3, 1) infinite; }
+    .av-b4 { animation: av-br4 12s cubic-bezier(0.4, 0, 0.3, 1) infinite; }
+    @keyframes av-br1 {
+      0%, 53%   { stroke-dashoffset: 1; opacity: 1; }
+      60%       { stroke-dashoffset: 0; }
+      93%       { stroke-dashoffset: 0; opacity: 1; }
+      97%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes av-br2 {
+      0%, 56%   { stroke-dashoffset: 1; opacity: 1; }
+      63%       { stroke-dashoffset: 0; }
+      93%       { stroke-dashoffset: 0; opacity: 1; }
+      97%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes av-br3 {
+      0%, 59%   { stroke-dashoffset: 1; opacity: 1; }
+      66%       { stroke-dashoffset: 0; }
+      93%       { stroke-dashoffset: 0; opacity: 1; }
+      97%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes av-br4 {
+      0%, 62%   { stroke-dashoffset: 1; opacity: 1; }
+      69%       { stroke-dashoffset: 0; }
+      93%       { stroke-dashoffset: 0; opacity: 1; }
+      97%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+
+    .av-a1 { animation: av-art1 12s ease-in-out infinite; }
+    .av-a2 { animation: av-art2 12s ease-in-out infinite; }
+    .av-a3 { animation: av-art3 12s ease-in-out infinite; }
+    .av-a4 { animation: av-art4 12s ease-in-out infinite; }
+    @keyframes av-art1 {
+      0%, 59%   { opacity: 0; transform: translateY(5px); }
+      63%       { opacity: 1; transform: translateY(0); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+    @keyframes av-art2 {
+      0%, 63%   { opacity: 0; transform: translateY(5px); }
+      67%       { opacity: 1; transform: translateY(0); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+    @keyframes av-art3 {
+      0%, 67%   { opacity: 0; transform: translateY(5px); }
+      71%       { opacity: 1; transform: translateY(0); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+    @keyframes av-art4 {
+      0%, 71%   { opacity: 0; transform: translateY(5px); }
+      75%       { opacity: 1; transform: translateY(0); }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+
+    .av-note { animation: av-notein 12s ease-in-out infinite; }
+    @keyframes av-notein {
+      0%, 26%   { opacity: 0; }
+      32%       { opacity: 1; }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+
+    .av-stage { animation: av-stagein 12s ease-in-out infinite; }
+    @keyframes av-stagein {
+      0%, 24%   { opacity: 0; }
+      30%       { opacity: 1; }
+      93%       { opacity: 1; }
+      97%, 100% { opacity: 0; }
+    }
+
+
+    /* accent carousel: ultramarine -> forest -> carmine, one hue per 12s loop */
+    .av-af { animation: av-accfill 36s ease-in-out infinite; }
+    .av-ng { animation: av-accnode 36s ease-in-out infinite; }
+    @keyframes av-accfill {
+      0%      { fill: #3157D5; }
+      31%     { fill: #3157D5; }
+      35%     { fill: #2F6B4E; }
+      64.33%  { fill: #2F6B4E; }
+      68.33%  { fill: #B5382D; }
+      97.67%  { fill: #B5382D; }
+      100%    { fill: #3157D5; }
+    }
+    @keyframes av-accnode {
+      0%      { stroke: #3157D5; fill: #DDE5FA; }
+      31%     { stroke: #3157D5; fill: #DDE5FA; }
+      35%     { stroke: #2F6B4E; fill: #DCE9DF; }
+      64.33%  { stroke: #2F6B4E; fill: #DCE9DF; }
+      68.33%  { stroke: #B5382D; fill: #F4DDD9; }
+      97.67%  { stroke: #B5382D; fill: #F4DDD9; }
+      100%    { stroke: #3157D5; fill: #DDE5FA; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .av-thread, .av-b {
+        animation: none;
+        stroke-dasharray: none;
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+      .av-n1, .av-n2, .av-n3, .av-bp,
+      .av-a1, .av-a2, .av-a3, .av-a4,
+      .av-note, .av-stage {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+      .av-af, .av-ng { animation: none; }
+      .av-sig { display: none; }
+    }
+  </style>
+
+  <!-- ground -->
+  <rect x="0" y="0" width="1200" height="560" fill="#F6F4EF"/>
+  <rect x="0" y="0" width="1200" height="560" fill="url(#av-paper)" opacity="0.5"/>
+
+  <!-- construction: quiet dotted divider between text and thread system -->
+  <line x1="654" y1="96" x2="654" y2="448" stroke="#D8D3CA" stroke-width="1" stroke-dasharray="2 6" vector-effect="non-scaling-stroke"/>
+
+  <!-- ============ LEFT: identity, headline, narrative ============ -->
+
+  <rect class="av-af" x="64" y="84" width="6" height="6" fill="#3157D5"/>
+  <text class="av-mono" x="80" y="92" font-size="12" letter-spacing="2.5" fill="#68645E">ADRIAN VALE / @AI-BOOST</text>
+
+  <text class="av-serif" x="64" y="170" font-size="52" fill="#171717">I kept pulling</text>
+  <text class="av-serif" x="64" y="228" font-size="52" fill="#171717">on the <tspan class="av-af" font-style="italic" fill="#3157D5">thread.</tspan></text>
+
+  <text class="av-sans" x="64" y="286" font-size="18" fill="#171717">Prompts led to agents.</text>
+  <text class="av-sans" x="64" y="316" font-size="18" fill="#171717">Agents led to systems.</text>
+  <text class="av-sans" x="64" y="346" font-size="18" fill="#171717">Systems led me to science.</text>
+
+  <text class="av-sans" x="64" y="396" font-size="17" fill="#68645E">Now I build open tools, agent skills, and research infrastructure</text>
+  <text class="av-sans" x="64" y="424" font-size="17" fill="#68645E">for scientific discovery.</text>
+
+  <!-- ============ RIGHT: the thread ============ -->
+
+  <!-- stage annotations -->
+  <g class="av-stage">
+    <text class="av-mono" x="688" y="104" font-size="11.5" letter-spacing="1.5" fill="#68645E">prompt</text>
+    <text class="av-mono" x="748" y="196" font-size="11.5" letter-spacing="1.5" fill="#68645E">agents</text>
+    <text class="av-mono" x="858" y="240" font-size="11.5" letter-spacing="1.5" fill="#68645E">systems</text>
+  </g>
+
+  <text class="av-serif av-note" x="694" y="240" font-size="12.5" font-style="italic" fill="#68645E">still experimenting</text>
+
+  <!-- origin mark -->
+  <circle cx="692" cy="150" r="2.5" fill="#171717"/>
+
+  <!-- the main thread: a loose oscillation that settles, then descends and levels
+       into the junction. Every segment is tangent-continuous. -->
+  <path id="av-threadpath" class="av-thread" pathLength="1"
+        d="M 692 150
+           C 703 122, 719 122, 730 150
+           S 759 178, 770 150
+           S 797 130, 808 151
+           S 833 168, 844 153
+           S 865 145, 876 156
+           C 887 165, 908 187, 918 209
+           C 928 231, 936 250, 950 250"
+        fill="none" stroke="#171717" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+
+  <!-- three structural nodes, set on the thread's own anchor points -->
+  <g class="av-ng" fill="#DDE5FA" stroke="#3157D5">
+    <circle class="av-n av-n1" cx="770" cy="150" r="4.5" stroke-width="1.4"/>
+    <circle class="av-n av-n2" cx="844" cy="153" r="4.5" stroke-width="1.4"/>
+    <circle class="av-n av-n3" cx="918" cy="209" r="4.5" stroke-width="1.4"/>
+  </g>
+
+  <!-- junction: where the thread divides -->
+  <g class="av-af" fill="#3157D5"><circle class="av-bp" cx="950" cy="250" r="3"/></g>
+
+  <!-- four strands leave the junction on the same horizontal tangent, diverge,
+       and each one BECOMES its artifact -->
+
+  <!-- strand 1: code — the thread breaks into left-aligned statements -->
+  <path class="av-b av-b1" pathLength="1"
+        d="M 950 250 C 990 250, 1005 154, 1045 154 h 40"
+        fill="none" stroke="#171717" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <g class="av-a1">
+    <line x1="1045" y1="143" x2="1073" y2="143" stroke="#171717" stroke-width="1.25" stroke-linecap="round"/>
+    <line x1="1045" y1="165" x2="1065" y2="165" stroke="#171717" stroke-width="1.25" stroke-linecap="round"/>
+    <text class="av-serif" x="1045" y="188" font-size="12.5" font-style="italic" fill="#68645E">code</text>
+  </g>
+
+  <!-- strand 2: data — the thread settles into a baseline under scattered points -->
+  <path class="av-b av-b2" pathLength="1"
+        d="M 950 250 C 990 250, 1010 218, 1045 218 h 50"
+        fill="none" stroke="#171717" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <g class="av-a2">
+    <circle cx="1054" cy="207" r="1.8" fill="#171717"/>
+    <circle cx="1066" cy="200" r="1.8" fill="#171717"/>
+    <circle cx="1078" cy="209" r="1.8" fill="#171717"/>
+    <circle cx="1090" cy="198" r="1.8" fill="#171717"/>
+    <text class="av-serif" x="1045" y="242" font-size="12.5" font-style="italic" fill="#68645E">data</text>
+  </g>
+
+  <!-- strand 3: figure — the thread rises into a measured curve on faint axes -->
+  <path class="av-b av-b3" pathLength="1"
+        d="M 950 250 C 990 250, 1010 282, 1045 282
+           C 1053 282, 1058 276, 1063 268
+           S 1073 254, 1080 262
+           S 1091 276, 1097 262"
+        fill="none" stroke="#171717" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <g class="av-a3">
+    <path d="M 1048 254 v 33 h 49" fill="none" stroke="#DAD5CB" stroke-width="1" stroke-linecap="round"/>
+    <text class="av-serif" x="1045" y="308" font-size="12.5" font-style="italic" fill="#68645E">figure</text>
+  </g>
+
+  <!-- strand 4: paper — the thread folds back and forth into ruled lines -->
+  <path class="av-b av-b4" pathLength="1"
+        d="M 950 250 C 990 250, 1005 346, 1045 346
+           h 38 c 8 0 8 11 0 11 h -34 c -8 0 -8 11 0 11 h 26"
+        fill="none" stroke="#171717" stroke-width="1.25" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <g class="av-a4">
+    <text class="av-serif" x="1045" y="390" font-size="12.5" font-style="italic" fill="#68645E">paper</text>
+  </g>
+
+  <!-- the travelling signal -->
+  <circle class="av-sig av-af" r="4" fill="#3157D5" opacity="0">
+    <animateMotion dur="12s" repeatCount="indefinite" calcMode="linear"
+                   keyPoints="0;0;1;1" keyTimes="0;0.27;0.53;1">
+      <mpath href="#av-threadpath"/>
+    </animateMotion>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite"
+             values="0;0;1;1;0;0" keyTimes="0;0.27;0.29;0.51;0.54;1"/>
   </circle>
 
-  <text
-    x="82"
-    y="64"
-    class="mono soft"
-    font-size="15"
-    letter-spacing="2"
-  >
-    ADRIAN VALE / @AI-BOOST
-  </text>
+  <!-- CURRENTLY -->
+  <text class="av-mono av-af" x="688" y="372" font-size="11.5" letter-spacing="2.5" fill="#3157D5">CURRENTLY</text>
+  <text class="av-sans" x="688" y="400" font-size="14.5" fill="#171717">teaching a humanoid to stop falling</text>
+  <text class="av-sans" x="688" y="426" font-size="14.5" fill="#171717">training models on my own GPU</text>
+  <text class="av-sans" x="688" y="452" font-size="14.5" fill="#171717">building Open Science Desktop</text>
 
-  <text
-    x="1136"
-    y="64"
-    class="mono muted"
-    font-size="13"
-    letter-spacing="1.6"
-    text-anchor="end"
-  >
-    BUILDING IN PUBLIC
-  </text>
+  <!-- ============ BOTTOM: colophon ============ -->
 
-  <line
-    x1="52"
-    y1="88"
-    x2="1148"
-    y2="88"
-    stroke="#30363d"
-  />
+  <line x1="64" y1="470" x2="1136" y2="470" stroke="#D8D3CA" stroke-width="1" vector-effect="non-scaling-stroke"/>
 
-  <!-- Main statement -->
-  <text
-    x="64"
-    y="168"
-    class="sans bright"
-    font-size="54"
-    font-weight="650"
-    letter-spacing="-1.8"
-  >
-    I build the systems
-  </text>
+  <rect class="av-af" x="64" y="486" width="5" height="5" fill="#3157D5"/>
+  <text class="av-mono" x="80" y="494" font-size="11.5" letter-spacing="2" fill="#68645E">AI FOR SCIENCE<tspan class="av-af" dx="12" fill="#3157D5">/</tspan><tspan dx="12">SCIENTIFIC AGENTS</tspan><tspan class="av-af" dx="12" fill="#3157D5">/</tspan><tspan dx="12">HARNESS ENGINEERING</tspan></text>
 
-  <text
-    x="64"
-    y="229"
-    class="sans bright"
-    font-size="54"
-    font-weight="650"
-    letter-spacing="-1.8"
-  >
-    around intelligent models.
-  </text>
-
-  <text
-    x="66"
-    y="278"
-    class="sans muted"
-    font-size="20"
-  >
-    Open tools, agent skills, and research infrastructure
-  </text>
-
-  <text
-    x="66"
-    y="309"
-    class="sans muted"
-    font-size="20"
-  >
-    for machine-assisted scientific discovery.
-  </text>
-
-  <!-- Focus labels -->
-  <g transform="translate(64 350)">
-    <rect
-      width="148"
-      height="36"
-      rx="18"
-      fill="#161b22"
-      stroke="#30363d"
-    />
-    <text
-      x="74"
-      y="23"
-      class="mono soft"
-      font-size="13"
-      text-anchor="middle"
-    >
-      AI FOR SCIENCE
-    </text>
-  </g>
-
-  <g transform="translate(224 350)">
-    <rect
-      width="154"
-      height="36"
-      rx="18"
-      fill="#161b22"
-      stroke="#30363d"
-    />
-    <text
-      x="77"
-      y="23"
-      class="mono soft"
-      font-size="13"
-      text-anchor="middle"
-    >
-      AGENT SYSTEMS
-    </text>
-  </g>
-
-  <g transform="translate(390 350)">
-    <rect
-      width="196"
-      height="36"
-      rx="18"
-      fill="#161b22"
-      stroke="#30363d"
-    />
-    <text
-      x="98"
-      y="23"
-      class="mono soft"
-      font-size="13"
-      text-anchor="middle"
-    >
-      HARNESS ENGINEERING
-    </text>
-  </g>
-
-  <!-- Right-side project index -->
-  <line
-    x1="788"
-    y1="124"
-    x2="788"
-    y2="391"
-    stroke="url(#glow)"
-    stroke-width="2"
-  />
-
-  <text
-    x="824"
-    y="145"
-    class="mono accent"
-    font-size="13"
-    letter-spacing="2"
-  >
-    SELECTED WORK
-  </text>
-
-  <text
-    x="824"
-    y="196"
-    class="mono muted"
-    font-size="14"
-  >
-    01
-  </text>
-
-  <text
-    x="862"
-    y="196"
-    class="sans bright"
-    font-size="18"
-    font-weight="600"
-  >
-    Open Science Desktop
-  </text>
-
-  <text
-    x="824"
-    y="246"
-    class="mono muted"
-    font-size="14"
-  >
-    02
-  </text>
-
-  <text
-    x="862"
-    y="246"
-    class="sans bright"
-    font-size="18"
-    font-weight="600"
-  >
-    AI4S Skills
-  </text>
-
-  <text
-    x="824"
-    y="296"
-    class="mono muted"
-    font-size="14"
-  >
-    03
-  </text>
-
-  <text
-    x="862"
-    y="296"
-    class="sans bright"
-    font-size="18"
-    font-weight="600"
-  >
-    Awesome AI for Science
-  </text>
-
-  <text
-    x="824"
-    y="346"
-    class="mono muted"
-    font-size="14"
-  >
-    04
-  </text>
-
-  <text
-    x="862"
-    y="346"
-    class="sans bright"
-    font-size="18"
-    font-weight="600"
-  >
-    Harness Engineering
-  </text>
-
-  <!-- Footer trajectory -->
-  <line
-    x1="52"
-    y1="426"
-    x2="1148"
-    y2="426"
-    stroke="#30363d"
-  />
-
-  <text
-    x="64"
-    y="470"
-    class="mono muted"
-    font-size="14"
-    letter-spacing="1.1"
-  >
-    PROMPTS
-  </text>
-
-  <text x="162" y="470" class="mono accent" font-size="16">→</text>
-
-  <text
-    x="196"
-    y="470"
-    class="mono muted"
-    font-size="14"
-    letter-spacing="1.1"
-  >
-    AGENTS
-  </text>
-
-  <text x="282" y="470" class="mono accent" font-size="16">→</text>
-
-  <text
-    x="316"
-    y="470"
-    class="mono muted"
-    font-size="14"
-    letter-spacing="1.1"
-  >
-    HARNESSES
-  </text>
-
-  <text x="426" y="470" class="mono accent" font-size="16">→</text>
-
-  <text
-    x="460"
-    y="470"
-    class="mono bright"
-    font-size="14"
-    font-weight="600"
-    letter-spacing="1.1"
-  >
-    DISCOVERY
-  </text>
-
-  <text
-    x="1136"
-    y="470"
-    class="mono muted"
-    font-size="12"
-    letter-spacing="1.5"
-    text-anchor="end"
-  >
-    OPEN SYSTEMS / 2026
-  </text>
+  <!-- signature: the thread in miniature -->
+  <circle cx="1076" cy="490" r="1.8" fill="#171717"/>
+  <path d="M 1076 490 C 1082 484, 1090 496, 1096 490 S 1108 485, 1114 490 S 1126 492, 1134 490"
+        fill="none" stroke="#171717" stroke-width="1.2" stroke-linecap="round"/>
 </svg>
